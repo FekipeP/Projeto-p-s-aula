@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar Conta</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+            margin: 0;
+        }
+        form {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: dodgerblue;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            background-color: deepskyblue;
+        }
+        .link {
+            display: block;
+            margin-top: 10px;
+            text-align: center;
+            text-decoration: none;
+            color: dodgerblue;
+        }
+        .error {
+            color: red;
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Criar Conta</h1>
+    <form action="your_signup_processing_script.php" method="POST">
+        <input type="text" name="username" placeholder="Nome de Usuário" required>
+        <div class="error" id="username-error"></div>
+        <input type="email" name="email" placeholder="Email" required>
+        <div class="error" id="email-error"></div>
+        <input type="password" name="password" placeholder="Senha" required>
+        <div class="error" id="password-error"></div>
+        <button type="submit">Criar Conta</button>
+    </form>
+    <a href="login.html" class="link">Já tem uma conta? Faça Login</a> 
+    <script>
+        const form = document.querySelector('form');
+        const usernameInput = document.querySelector('input[name="username"]');
+        const emailInput = document.querySelector('input[name="email"]');
+        const passwordInput = document.querySelector('input[name="password"]');
+        const usernameError = document.querySelector('#username-error');
+        const emailError = document.querySelector('#email-error');
+        const passwordError = document.querySelector('#password-error');
+
+        form.addEventListener('submit', (e) => {
+            let isValid = true;
+
+            if (usernameInput.value.trim() === '') {
+                usernameError.textContent = 'Por favor, insira um nome de usuário.';
+                isValid = false;
+            } else {
+                usernameError.textContent = '';
+            }
+
+            if (emailInput.value.trim() === '') {
+                emailError.textContent = 'Por favor, insira um email.';
+                isValid = false;
+            } else {
+                emailError.textContent = '';
+            }
+
+            if (passwordInput.value.trim() === '') {
+                passwordError.textContent = 'Por favor, insira uma senha.';
+                isValid = false;
+            } else {
+                passwordError.textContent = '';
+            }
+
+            if (!isValid) {
+                e.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html>
