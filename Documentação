@@ -1,0 +1,95 @@
+Estrutura do Documento
+1. Declaração do Documento
+html
+
+Verify
+
+Open In Editor
+Edit
+Run
+Copy code
+<!DOCTYPE html>
+<html lang="pt-br">
+<!DOCTYPE html>: Indica que este é um documento HTML5.
+<html lang="pt-br">: Define o idioma da página como português do Brasil.
+2. Cabeçalho (<head>)
+html
+
+Verify
+
+Open In Editor
+Edit
+Run
+Copy code
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/favicon.png" />
+    <title>Pizzaria kevin</title>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<meta charset="utf-8">: Define a codificação de caracteres como UTF-8, suportando caracteres especiais.
+<meta name="viewport" content="width=device-width, initial-scale=1.0">: Configura a viewport para garantir que a página seja responsiva em dispositivos móveis.
+<link rel="icon" href="images/favicon.png">: Define o ícone que aparecerá na aba do navegador.
+<title>Pizzaria kevin</title>: Define o título da página, que aparece na aba do navegador.
+<link rel="stylesheet" href="css/style.css">: Vincula um arquivo CSS externo para estilização da página.
+3. Corpo do Documento (<body>)
+3.1. Modelos de Pizza
+html
+
+Verify
+
+Open In Editor
+Edit
+Run
+Copy code
+<div class="models">
+    <!-- pizza na lista -->
+    <div class="pizza-item">
+        <a href="">
+            <div class="pizza-item--img"><img src="" /></div>
+            <div class="pizza-item--add">+</div>
+        </a>
+        <div class="pizza-item--price">R$ --</div>
+        <div class="pizza-item--name">--</div>
+        <div class="pizza-item--desc">--</div>
+    </div>
+
+    <!-- pizza no carrinho -->
+    <div class="cart--item">
+        <img src="" />
+        <div class="cart--item-nome">--</div>
+        <div class="cart--item--qtarea">
+            <button class="cart--item-qtmenos">-</button>
+            <div class="cart--item--qt">1</div>
+            <button class="cart--item-qtmais">+</button>
+        </div>
+    </div>
+</div>
+<div class="models">: Contém os modelos de pizza disponíveis e os itens no carrinho.
+.pizza-item: Representa uma pizza disponível para compra, incluindo:
+Imagem da Pizza: <div class="pizza-item--img"><img src="" /></div>
+Botão de Adicionar: <div class="pizza-item--add">+</div>
+Preço: <div class="pizza-item--price">R$ --</div>
+Nome: <div class="pizza-item--name">--</div>
+Descrição: <div class="pizza-item--desc">--</div>
+.cart--item: Representa um item no carrinho, incluindo:
+Imagem da Pizza: <img src="" />
+Nome da Pizza: <div class="cart--item-nome">--</div>
+Área de Quantidade: Contém botões para aumentar ou diminuir a quantidade da pizza no carrinho.
+3.2. Cabeçalho (<header>)
+html
+
+Verify
+
+Open In Editor
+Edit
+Run
+Copy code
+<header>
+    <h1>La pizzaria</h1>
+    <a href="file:///C:/Users/xboxn/Downloads/PizzaKai-main/tele%20de%20login.html"><input type="button" value="Login"></a>
+    <div class="menu-openner"><span>0</span>🛒</div>
+</header>
+<h1>: Título principal da página.
+Botão de Login: Link para a página de login
